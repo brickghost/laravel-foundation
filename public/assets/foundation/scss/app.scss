@@ -1,34 +1,76 @@
-// Comment out this import if you don't want to use normalize
-@import "normalize";
-
-// Comment out this import if you are customizing you imports below
+@import "settings";
 @import "foundation";
 
-@import "foundation-icons";
+$proxima: "proxima-nova",sans-serif;
+$johnDoe: "john-doe",serif;
+$gothic:  "league-gothic",sans-serif;
 
-// Custom mixins
-@mixin dropshadow {
-	-webkit-box-shadow: 0px 3px 5px rgba(100, 100, 100, 0.49);
-	-moz-box-shadow:    0px 3px 5px rgba(100, 100, 100, 0.49);
-	box-shadow:         0px 3px 5px rgba(100, 100, 100, 0.49);
-}
-@mixin circlenumber {
-	background: #cccccc;
-	border-radius: 0.8em;
-	-moz-border-radius: 0.8em;
-	-webkit-border-radius: 0.8em;
-	color: #ffffff;
-	display: inline-block;
-	font-weight: bold;
-	line-height: 1.6em;
-	margin-right: 5px;
-	text-align: center;
-	width: 1.6em; 
+$green:      #4AD227;
+$lightGreen: #A1FF2E;
+$orange:     #FF592E;
+
+body {
+  font-family: $proxima;
 }
 
-@mixin opacity($percent) {
-	$dec: $percent/100;
-	-webkit-opacity: $dec;
-	-moz-opacity: $dec;
-	filter:alpha(opacity=$percent);
+h1#codefu {
+  font-family: $johnDoe;
+}
+
+h1.hero {
+  font-size: 3em;
+}
+
+h1,h2,h3,h4 {
+  font-family: $gothic;
+}
+
+.full-width {
+  position: relative;
+  width: 100%;
+}
+
+#site-header {
+  margin-top: 25px;
+  background: #333;
+  margin-bottom: em-calc(25px);
+  border-bottom: 5px solid $orange;
+  .top-bar-section ul li.active a {
+    color: #666;
+  }
+}
+
+header {
+  @include grid-row;
+  .top-bar .name h1 a {
+    color: $lightGreen;
+  }
+}
+
+.panel.callout {
+  border: 1px solid $green;
+  background: #333;
+}
+
+.pricing-table .title {
+  font-family: $gothic;
+  font-size: 2em;
+}
+
+.main-content {
+  @include grid-row;
+  
+  aside  {
+    @include grid-column($columns:6);
+    @media #{$medium-up} {
+      @include grid-column($columns:4, $offset: 1);
+    }
+  }
+  
+  article  {
+    @include grid-column($columns:6);
+    @media #{$medium-up} {
+      @include grid-column($columns:7);
+    }
+  }
 }

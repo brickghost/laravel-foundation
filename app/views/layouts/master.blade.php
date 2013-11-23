@@ -3,13 +3,13 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
 
 <head>
-    <meta charset="utf-8">
+  <meta charset="utf-8">
   <meta name="viewport" content="width=device-width">
   <title>
-      @section('title')
-        Laravel 4.0.9 Skeleton With Zurb Foundation 4.3.2
-      @show
-    </title>
+    @section('title')
+      code FU Creative - Andrew Bricker
+    @show
+  </title>
   
   {{ HTML::style('assets/foundation/css/app.css') }}
 
@@ -18,39 +18,52 @@
 
   {{ HTML::script('assets/foundation/js/vendor/custom.modernizr.js') }}
   {{ HTML::script('assets/foundation/js/vendor/jquery.js') }}
-
-  @section('scripts')
-  @show
+  <script type="text/javascript" src="//use.typekit.net/xmv6hhx.js"></script>
+  <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
 
 </head>
 <body>
+  <div class="full-width" id="site-header">
+    <header>
+      <div class="contain-to-grid sticky">
+        <nav class="top-bar" data-topbar>
+          <ul class="title-area">
+            <li class="name">
+              <h1 id="codefu"><a href="#">&lt;code&gt; FU Creative</a></h1>
+            </li>
+          </ul>
 
-  <div class="row">
+          <section class="top-bar-section">
+            <!-- Right Nav Section -->
+            <ul class="right">
+              <li class="active"><a href="#">hello</a></li>
+              <li><a href="#">let's chat</a></li>
+              <!-- <li class="has-dropdown"><a href="#">Right</a></li>
+              <li class="has-dropdown"><a href="#">Right</a></li>
+              <li class="has-dropdown"><a href="#">Right</a></li>
+              <li class="has-dropdown"><a href="#">Right</a></li> -->
+            </ul>
+          </section>
+        </nav>
+      </div>
+    </header>
+  </div>
+  <div class="main-content">
     <!-- Content -->
     @yield('content')
     <!-- ./ content -->
   </div> 
 
-  {{ HTML::script('assets/foundation/js/foundation/foundation.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.clearing.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.cookie.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.dropdown.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.forms.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.joyride.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.magellan.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.orbit.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.placeholder.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.reveal.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.section.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.tooltips.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.topbar.js') }}
-  {{ HTML::script('assets/foundation/js/foundation/foundation.interchange.js') }}
+  {{ HTML::script('assets/foundation/js/foundation.min.js') }}
   {{ HTML::script('assets/js/jquery.history.js') }}
   {{ HTML::script('assets/js/jquery.mustache.js') }}
-
-  
+  {{ HTML::script('assets/foundation/js/app.js') }}
   <script>
     $(document).foundation();
   </script>
+
+  @section('scripts')
+  @show
+
 </body>
 </html>
